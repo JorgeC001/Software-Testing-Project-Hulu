@@ -76,5 +76,38 @@ public class VideoPlayerTest {
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[3]/div/div[1]/div[3]/div[2]/div[2]/div/div[1]/div[1]/div[3]"))
                 .click();
         Thread.sleep(2000);
+
+        // Click on the settings icon
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[3]/div/div[1]/div[3]/div[2]/div[3]"))
+                .click();
+        Thread.sleep(2000);
+    }
+
+    @Test
+    void screenSizeOptions() throws InterruptedException{
+        // Click on the fullscreen button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[1]"))
+                .click();
+        Thread.sleep(2000);
+
+        // Click on the exit fullscreen button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[1]"))
+                .click();
+        Thread.sleep(2000);
+
+        // Click on the minimize button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[2]"))
+                .click();
+        Thread.sleep(2000);
+
+        // Click on the maximize button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[1]"))
+                .click();
+        Thread.sleep(2000);
+
+        // Click on the close button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[3]"))
+                .click();
+        Thread.sleep(2000);
     }
 }
