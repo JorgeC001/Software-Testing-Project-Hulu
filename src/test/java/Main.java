@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,6 +14,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class Main {
     private static WebDriver driver;
     private static WebDriverWait wait;
+    private static WebDriverWait longWait;
     private static boolean driverSetup = false;
     @Getter
     private static final Dotenv dotenv = Dotenv.load();
@@ -28,7 +30,7 @@ public class Main {
             WebDriverManager.firefoxdriver();
             driver = new FirefoxDriver();
             
-            driver.manage().timeouts().implicitlyWait(Duration.of(10, ChronoUnit.SECONDS));
+            driver.manage().timeouts().implicitlyWait(Duration.of(120, ChronoUnit.SECONDS));
             
             driverSetup = true;
         }
@@ -38,17 +40,20 @@ public class Main {
     @NonNull
     public static WebDriverWait getWait() {
         if (wait == null) {
+            // to give time for getting email confirmation, we need to set the time pretty high
             wait = new WebDriverWait(getDriver(), Duration.of(8, ChronoUnit.SECONDS));
         }
         
         return wait;
     }
 
-    public static boolean isOnMainPage() {
-        return driver.getCurrentUrl().contains("www.hulu.com/hub/home");
-    }
+    @NonNull
+    public static WebDriverWait getLongWait() {
+        if (longWait == null) {
+            // to give time for getting email confirmation, we need to set the time pretty high
+            longWait = new WebDriverWait(getDriver(), Duration.of(120, ChronoUnit.SECONDS));
+        }
 
-    public static void goToMainPage() {
-        driver.findElement(By.cssSelector("#__next > header > nav > a")).click();
+        return longWait;
     }
 }
