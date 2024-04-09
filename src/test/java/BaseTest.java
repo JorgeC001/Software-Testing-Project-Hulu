@@ -1,11 +1,12 @@
 import io.github.cdimascio.dotenv.Dotenv;
+import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
-	private final Integer SLEEP_TIME = 2000;
+	private final Integer SLEEP_TIME = 5000;
 	protected final String HUB_URL = "www.hulu.com/hub/home";
 
 	protected final WebDriver driver = Main.getDriver();
@@ -14,23 +15,27 @@ public class BaseTest {
 	protected final Dotenv dotenv = Main.getDotenv();
 
 	protected void clickThenSleep(By by) {
+		clickThenSleep(by, SLEEP_TIME);
+	}
+
+	@SneakyThrows
+	protected void clickThenSleep(By by, int time) {
 		driver.findElement(by).click();
-		try {
-			Thread.sleep(SLEEP_TIME);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
+		Thread.sleep(time);
 	}
 
 	protected boolean isOnMainPage() {
+		System.out.println("isOnMainPage...");
 		return driver.getCurrentUrl().contains(HUB_URL);
 	}
 
 	protected boolean isNotOnMainPage() {
+		System.out.println("isNotOnMainPage...");
 		return !isOnMainPage();
 	}
 
 	protected void goToMainPage() {
+		System.out.println("goToMainPage...");
 		WebElement logo = driver.findElement(By.cssSelector("#__next > header > nav > a"));
 
 		if (!logo.isEnabled() || !logo.isDisplayed()) {

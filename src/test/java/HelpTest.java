@@ -6,17 +6,14 @@ import org.testng.annotations.Test;
 
 import javax.swing.plaf.TableHeaderUI;
 
-public class HelpTest {
-    private final Login login = Main.getLogin();
-    private final WebDriver driver = Main.getDriver();
-    private final WebDriverWait wait = Main.getWait();
+public class HelpTest extends BaseTest {
 
     @Test(priority = 1, groups = "help")
     void helpSearch() throws InterruptedException{
+        System.out.println("help search");
         // Go to the help page
         driver.get("https://help.hulu.com/");
         driver.manage().window().maximize();
-        Thread.sleep(5000);
 
         // Type issue in the search bar
         driver.findElement(By.id("input-251")).sendKeys("payment");
@@ -25,46 +22,34 @@ public class HelpTest {
         // Press enter to start search
         driver.findElement(By.id("input-251")).sendKeys(Keys.ENTER);
         Thread.sleep(2000);
+        System.out.println("done with help search");
     }
 
     @Test(priority = 2, groups = "help")
     void helpPopularArticles() throws InterruptedException{
-        driver.findElement(By.linkText("Plans and pricing")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Plans and pricing"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
+        clickThenSleep(By.linkText("Help Center"), 2000);
 
-        driver.findElement(By.linkText("Update payment")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Update payment"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
+        clickThenSleep(By.linkText("Help Center"), 2000);
 
-        driver.findElement(By.linkText("Manage activated devices")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Manage activated devices"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
+        clickThenSleep(By.linkText("Help Center"), 2000);
 
-        driver.findElement(By.linkText("Login issues")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Login issues"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
+        clickThenSleep(By.linkText("Help Center"), 2000);
 
-        driver.findElement(By.linkText("Live TV Home network")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Live TV Home network"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
+        clickThenSleep(By.linkText("Help Center"), 2000);
 
-        driver.findElement(By.linkText("Activate Hulu and ESPN+")).click();
-        Thread.sleep(2000);
+        clickThenSleep(By.linkText("Activate Hulu and ESPN+"));
 
-        driver.findElement(By.linkText("Help Center")).click();
-        Thread.sleep(1000);
-
+        clickThenSleep(By.linkText("Help Center"), 2000);
     }
 
     @Test(priority = 3, groups = "help")

@@ -30,7 +30,7 @@ public class Main {
             WebDriverManager.firefoxdriver();
             driver = new FirefoxDriver();
             
-            driver.manage().timeouts().implicitlyWait(Duration.of(120, ChronoUnit.SECONDS));
+            driver.manage().timeouts().implicitlyWait(Duration.of(8, ChronoUnit.SECONDS));
             
             driverSetup = true;
         }
