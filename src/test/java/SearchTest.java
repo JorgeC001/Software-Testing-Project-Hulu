@@ -6,19 +6,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SearchTest extends  BaseTest {
-    @BeforeGroups
-    void setup() {
-        System.out.println("SearchTest setup...");
+    @Test(dependsOnGroups = {"signIn"}, priority = 1, groups = "search")
+    void searchByTitle() throws InterruptedException{
+        System.out.println("searchByTitle...");
         if (isNotOnMainPage()) {
             goToMainPage();
         }
-    }
-
-    @Test(dependsOnGroups = {"signIn"}, priority = 1, groups = "search")
-    void searchByTitle() throws InterruptedException{
         // Clicks on search button
         By searchButton = By.xpath("/html/body/div[2]/header/nav/div/a");
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchButton));
@@ -44,7 +41,7 @@ public class SearchTest extends  BaseTest {
 
     @Test(dependsOnGroups = {"signIn"}, priority = 2, groups = "search")
     void searchByBrowseLink() throws InterruptedException{
-
+        System.out.println("searchByBrowseLink...");
         // Scroll down until movies link is found
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(SLEEP_TIME);
@@ -72,6 +69,7 @@ public class SearchTest extends  BaseTest {
 
     @Test(dependsOnGroups = {"signIn"}, priority = 3, groups = "search")
     void searchByGenre() throws InterruptedException{
+        System.out.println("searchByGenre...");
         driver.get("https://www.hulu.com/search");
         Thread.sleep(SLEEP_TIME);
 

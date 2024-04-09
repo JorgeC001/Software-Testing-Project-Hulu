@@ -12,7 +12,7 @@ public class HelpTest extends BaseTest {
         driver.manage().window().maximize();
     }
 
-    @Test(priority = 1, groups = "help")
+    @Test(priority = 15, groups = "help")
     void helpSearch() throws InterruptedException{
         System.out.println("help search");
 
@@ -26,7 +26,7 @@ public class HelpTest extends BaseTest {
         System.out.println("done with help search");
     }
 
-    @Test(priority = 2, groups = "help")
+    @Test(priority = 16, groups = "help")
     void helpPopularArticles() {
         clickThenSleep(By.linkText("Plans and pricing"));
 
@@ -53,7 +53,7 @@ public class HelpTest extends BaseTest {
         clickThenSleep(By.linkText("Help Center"), SHORT_SLEEP_TIME);
     }
 
-    @Test(priority = 3, groups = "help")
+    @Test(priority = 17, groups = "help")
     void helpTopics() {
         // Click on the Getting Started topic
         clickThenSleep(By.xpath("/html/body/webruntime-app/lwr-router-container/webruntime-inner-app/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/c-dtcvx_support-theme/div/section/slot/webruntime-router-container/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/community_layout-slds-flexible-layout/div/webruntime-component-container/community_layout-section/div[3]/community_layout-column/div/c-dtcvx_topic-home/c-dtcvx_topic/div/a[1]/div"), SHORT_SLEEP_TIME);
