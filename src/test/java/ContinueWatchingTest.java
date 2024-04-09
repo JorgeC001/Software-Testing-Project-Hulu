@@ -22,7 +22,8 @@ public class ContinueWatchingTest extends BaseTest {
 	@Test(dependsOnGroups = {"signIn"}, priority = 8, groups = "continueWatching")
 	public void continueWatching() throws InterruptedException {
 		System.out.println("ContinueWatchingTest case...");
-		Thread.sleep(SHORT_SLEEP_TIME);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Welcome to Hulu']")));
+		Thread.sleep(SLEEP_TIME);
 		js.executeScript("window.scrollTo(0, 1500)");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Continue Watching']")));
@@ -34,5 +35,7 @@ public class ContinueWatchingTest extends BaseTest {
 		int amount = driver.findElements(By.cssSelector("div.AllUpGrid__generic-tile")).size();
 
 		Assert.assertEquals(amount, expected);
+
+		Thread.sleep(SLEEP_TIME);
 	}
 }

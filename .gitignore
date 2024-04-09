@@ -1,6 +1,5 @@
 .gradle
 target
-test-output
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/

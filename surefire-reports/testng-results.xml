@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="19" passed="16" failed="3" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-09T13:58:29 EDT" name="Surefire suite" finished-at="2024-04-09T14:01:53 EDT" duration-ms="204473">
+    <groups>
+      <group name="help">
+        <method signature="HelpTest.helpSearch()[pri:15, instance:HelpTest@2c532cd8]" name="helpSearch" class="HelpTest"/>
+        <method signature="HelpTest.helpPopularArticles()[pri:16, instance:HelpTest@2c532cd8]" name="helpPopularArticles" class="HelpTest"/>
+        <method signature="HelpTest.helpTopics()[pri:17, instance:HelpTest@2c532cd8]" name="helpTopics" class="HelpTest"/>
+      </group> <!-- help -->
+      <group name="myStuff">
+        <method signature="MyStuffTest.myStuffTest()[pri:9, instance:MyStuffTest@294e5088]" name="myStuffTest" class="MyStuffTest"/>
+      </group> <!-- myStuff -->
+      <group name="search">
+        <method signature="SearchTest.searchByTitle()[pri:1, instance:SearchTest@51972dc7]" name="searchByTitle" class="SearchTest"/>
+        <method signature="SearchTest.searchByBrowseLink()[pri:2, instance:SearchTest@51972dc7]" name="searchByBrowseLink" class="SearchTest"/>
+        <method signature="SearchTest.searchByGenre()[pri:3, instance:SearchTest@51972dc7]" name="searchByGenre" class="SearchTest"/>
+      </group> <!-- search -->
+      <group name="signIn">
+        <method signature="SignInTest.huluWelcomePage()[pri:0, instance:SignInTest@3700ec9c]" name="huluWelcomePage" class="SignInTest"/>
+        <method signature="SignInTest.selectProfile()[pri:1, instance:SignInTest@3700ec9c]" name="selectProfile" class="SignInTest"/>
+      </group> <!-- signIn -->
+      <group name="continueWatching">
+        <method signature="ContinueWatchingTest.continueWatching()[pri:8, instance:ContinueWatchingTest@1f6c9cd8]" name="continueWatching" class="ContinueWatchingTest"/>
+      </group> <!-- continueWatching -->
+      <group name="details">
+        <method signature="DetailsTest.addToMyStuffButton()[pri:10, instance:DetailsTest@5f6722d3]" name="addToMyStuffButton" class="DetailsTest"/>
+        <method signature="DetailsTest.likeDislikeButtons()[pri:11, instance:DetailsTest@5f6722d3]" name="likeDislikeButtons" class="DetailsTest"/>
+        <method signature="DetailsTest.watchPartyButton()[pri:12, instance:DetailsTest@5f6722d3]" name="watchPartyButton" class="DetailsTest"/>
+        <method signature="DetailsTest.seasonsDropdown()[pri:13, instance:DetailsTest@5f6722d3]" name="seasonsDropdown" class="DetailsTest"/>
+        <method signature="DetailsTest.detailsTabs()[pri:14, instance:DetailsTest@5f6722d3]" name="detailsTabs" class="DetailsTest"/>
+      </group> <!-- details -->
+      <group name="videoPlayer">
+        <method signature="VideoPlayerTest.playPauseVideo()[pri:4, instance:VideoPlayerTest@2002348]" name="playPauseVideo" class="VideoPlayerTest"/>
+        <method signature="VideoPlayerTest.volumeSlider()[pri:5, instance:VideoPlayerTest@2002348]" name="volumeSlider" class="VideoPlayerTest"/>
+        <method signature="VideoPlayerTest.videoSettings()[pri:6, instance:VideoPlayerTest@2002348]" name="videoSettings" class="VideoPlayerTest"/>
+        <method signature="VideoPlayerTest.screenSizeOptions()[pri:7, instance:VideoPlayerTest@2002348]" name="screenSizeOptions" class="VideoPlayerTest"/>
+      </group> <!-- videoPlayer -->
+    </groups>
+    <test started-at="2024-04-09T13:58:29 EDT" name="Surefire test" finished-at="2024-04-09T14:01:53 EDT" duration-ms="204473">
+      <class name="SearchTest">
+        <test-method signature="searchByTitle()[pri:1, instance:SearchTest@51972dc7]" started-at="2024-04-09T13:58:38 EDT" name="searchByTitle" depends-on-groups="signIn" finished-at="2024-04-09T13:58:47 EDT" duration-ms="8548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByTitle -->
+        <test-method signature="searchByBrowseLink()[pri:2, instance:SearchTest@51972dc7]" started-at="2024-04-09T13:58:47 EDT" name="searchByBrowseLink" depends-on-groups="signIn" finished-at="2024-04-09T13:59:07 EDT" duration-ms="19873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByBrowseLink -->
+        <test-method signature="searchByGenre()[pri:3, instance:SearchTest@51972dc7]" started-at="2024-04-09T13:59:07 EDT" name="searchByGenre" depends-on-groups="signIn" finished-at="2024-04-09T13:59:17 EDT" duration-ms="10192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByGenre -->
+      </class> <!-- SearchTest -->
+      <class name="HelpTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:00:58 EDT" name="setUp" finished-at="2024-04-09T14:00:59 EDT" duration-ms="1777" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="helpSearch()[pri:15, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:00:59 EDT" name="helpSearch" finished-at="2024-04-09T14:00:59 EDT" duration-ms="6" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[Element <input id="input-32" class="slds-input" name="s" type="search"> is not reachable by keyboard
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8d0ca478-f3e6-4893-85d5-89748e6c9182, sendKeysToElement {value=[Ljava.lang.CharSequence;@40620d8e, id=a1110700-b31c-40be-984e-b7eb75f2a0d7}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.2, moz:accessibilityChecks: false, moz:buildID: 20240401114208, moz:debuggerAddress: 127.0.0.1:42202, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3140, moz:profile: C:\Users\reeve\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:42202/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on windows (8d0ca478-f3e6-4893-85d5-89748e6c9182)] -> css selector: .slds-input]
+Session ID: 8d0ca478-f3e6-4893-85d5-89748e6c9182]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <input id="input-32" class="slds-input" name="s" type="search"> is not reachable by keyboard
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8d0ca478-f3e6-4893-85d5-89748e6c9182, sendKeysToElement {value=[Ljava.lang.CharSequence;@40620d8e, id=a1110700-b31c-40be-984e-b7eb75f2a0d7}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.2, moz:accessibilityChecks: false, moz:buildID: 20240401114208, moz:debuggerAddress: 127.0.0.1:42202, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3140, moz:profile: C:\Users\reeve\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:42202/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on windows (8d0ca478-f3e6-4893-85d5-89748e6c9182)] -> css selector: .slds-input]
+Session ID: 8d0ca478-f3e6-4893-85d5-89748e6c9182
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at HelpTest.helpSearch(HelpTest.java:20)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpSearch -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:00:59 EDT" name="setUp" finished-at="2024-04-09T14:01:00 EDT" duration-ms="733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="helpPopularArticles()[pri:16, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:01:00 EDT" name="helpPopularArticles" finished-at="2024-04-09T14:01:32 EDT" duration-ms="31462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpPopularArticles -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:01:32 EDT" name="setUp" finished-at="2024-04-09T14:01:32 EDT" duration-ms="309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="helpTopics()[pri:17, instance:HelpTest@2c532cd8]" started-at="2024-04-09T14:01:32 EDT" name="helpTopics" finished-at="2024-04-09T14:01:53 EDT" duration-ms="21512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpTopics -->
+      </class> <!-- HelpTest -->
+      <class name="DetailsTest">
+        <test-method signature="addToMyStuffButton()[pri:10, instance:DetailsTest@5f6722d3]" started-at="2024-04-09T14:00:26 EDT" name="addToMyStuffButton" depends-on-groups="signIn" finished-at="2024-04-09T14:00:35 EDT" duration-ms="9125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToMyStuffButton -->
+        <test-method signature="likeDislikeButtons()[pri:11, instance:DetailsTest@5f6722d3]" started-at="2024-04-09T14:00:35 EDT" name="likeDislikeButtons" depends-on-groups="signIn" finished-at="2024-04-09T14:00:43 EDT" duration-ms="8019" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: .gwbyix0
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8d0ca478-f3e6-4893-85d5-89748e6c9182, findElement {value=.gwbyix0, using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.2, moz:accessibilityChecks: false, moz:buildID: 20240401114208, moz:debuggerAddress: 127.0.0.1:42202, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3140, moz:profile: C:\Users\reeve\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:42202/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8d0ca478-f3e6-4893-85d5-89748e6c9182]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: .gwbyix0
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8d0ca478-f3e6-4893-85d5-89748e6c9182, findElement {value=.gwbyix0, using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.2, moz:accessibilityChecks: false, moz:buildID: 20240401114208, moz:debuggerAddress: 127.0.0.1:42202, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3140, moz:profile: C:\Users\reeve\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:42202/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8d0ca478-f3e6-4893-85d5-89748e6c9182
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at DetailsTest.likeDislikeButtons(DetailsTest.java:29)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- likeDislikeButtons -->
+        <test-method signature="watchPartyButton()[pri:12, instance:DetailsTest@5f6722d3]" started-at="2024-04-09T14:00:43 EDT" name="watchPartyButton" depends-on-groups="signIn" finished-at="2024-04-09T14:00:47 EDT" duration-ms="4527" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- watchPartyButton -->
+        <test-method signature="seasonsDropdown()[pri:13, instance:DetailsTest@5f6722d3]" started-at="2024-04-09T14:00:47 EDT" name="seasonsDropdown" depends-on-groups="signIn" finished-at="2024-04-09T14:00:51 EDT" duration-ms="3281" status="FAIL">
+          <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
+            <message>
+              <![CDATA[Element should have been "select" but was "div"
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "div"
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2.1'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.<init>(Select.java:46)
+at DetailsTest.seasonsDropdown(DetailsTest.java:77)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.support.ui.UnexpectedTagNameException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- seasonsDropdown -->
+        <test-method signature="detailsTabs()[pri:14, instance:DetailsTest@5f6722d3]" started-at="2024-04-09T14:00:51 EDT" name="detailsTabs" depends-on-groups="signIn" finished-at="2024-04-09T14:00:58 EDT" duration-ms="6840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- detailsTabs -->
+      </class> <!-- DetailsTest -->
+      <class name="VideoPlayerTest">
+        <test-method signature="playPauseVideo()[pri:4, instance:VideoPlayerTest@2002348]" started-at="2024-04-09T13:59:17 EDT" name="playPauseVideo" depends-on-groups="signIn" finished-at="2024-04-09T13:59:39 EDT" duration-ms="21959" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPauseVideo -->
+        <test-method signature="volumeSlider()[pri:5, instance:VideoPlayerTest@2002348]" started-at="2024-04-09T13:59:39 EDT" name="volumeSlider" depends-on-groups="signIn" finished-at="2024-04-09T13:59:41 EDT" duration-ms="2280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- volumeSlider -->
+        <test-method signature="videoSettings()[pri:6, instance:VideoPlayerTest@2002348]" started-at="2024-04-09T13:59:41 EDT" name="videoSettings" depends-on-groups="signIn" finished-at="2024-04-09T14:00:01 EDT" duration-ms="20252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- videoSettings -->
+        <test-method signature="screenSizeOptions()[pri:7, instance:VideoPlayerTest@2002348]" started-at="2024-04-09T14:00:01 EDT" name="screenSizeOptions" depends-on-groups="signIn" finished-at="2024-04-09T14:00:12 EDT" duration-ms="11169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenSizeOptions -->
+      </class> <!-- VideoPlayerTest -->
+      <class name="SignInTest">
+        <test-method signature="huluWelcomePage()[pri:0, instance:SignInTest@3700ec9c]" started-at="2024-04-09T13:58:29 EDT" name="huluWelcomePage" finished-at="2024-04-09T13:58:38 EDT" duration-ms="9134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- huluWelcomePage -->
+        <test-method signature="selectProfile()[pri:1, instance:SignInTest@3700ec9c]" started-at="2024-04-09T13:58:38 EDT" name="selectProfile" finished-at="2024-04-09T13:58:38 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectProfile -->
+      </class> <!-- SignInTest -->
+      <class name="MyStuffTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:MyStuffTest@294e5088]" started-at="2024-04-09T14:00:21 EDT" name="setup" finished-at="2024-04-09T14:00:22 EDT" duration-ms="868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="myStuffTest()[pri:9, instance:MyStuffTest@294e5088]" started-at="2024-04-09T14:00:22 EDT" name="myStuffTest" depends-on-groups="signIn" finished-at="2024-04-09T14:00:26 EDT" duration-ms="3786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myStuffTest -->
+      </class> <!-- MyStuffTest -->
+      <class name="ContinueWatchingTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:ContinueWatchingTest@1f6c9cd8]" started-at="2024-04-09T14:00:12 EDT" name="setup" finished-at="2024-04-09T14:00:13 EDT" duration-ms="840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="continueWatching()[pri:8, instance:ContinueWatchingTest@1f6c9cd8]" started-at="2024-04-09T14:00:13 EDT" name="continueWatching" depends-on-groups="signIn" finished-at="2024-04-09T14:00:21 EDT" duration-ms="7938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- continueWatching -->
+      </class> <!-- ContinueWatchingTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
