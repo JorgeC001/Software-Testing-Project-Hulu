@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
-	private final Integer SLEEP_TIME = 5000;
+	protected final Integer SLEEP_TIME = 5000;
+	protected final Integer SHORT_SLEEP_TIME = SLEEP_TIME/2;
 	protected final String HUB_URL = "www.hulu.com/hub/home";
 
 	protected final WebDriver driver = Main.getDriver();
