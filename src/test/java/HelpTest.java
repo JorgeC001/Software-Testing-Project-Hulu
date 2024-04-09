@@ -11,7 +11,7 @@ public class HelpTest {
     private final WebDriver driver = Main.getDriver();
     private final WebDriverWait wait = Main.getWait();
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "help")
     void helpSearch() throws InterruptedException{
         // Go to the help page
         driver.get("https://help.hulu.com/");
@@ -27,7 +27,7 @@ public class HelpTest {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = "help")
     void helpPopularArticles() throws InterruptedException{
         driver.findElement(By.linkText("Plans and pricing")).click();
         Thread.sleep(2000);
@@ -67,7 +67,7 @@ public class HelpTest {
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = "help")
     void helpTopics() throws InterruptedException{
         // Click on the Getting Started topic
         driver.findElement(By.xpath("/html/body/webruntime-app/lwr-router-container/webruntime-inner-app/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/c-dtcvx_support-theme/div/section/slot/webruntime-router-container/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/community_layout-slds-flexible-layout/div/webruntime-component-container/community_layout-section/div[3]/community_layout-column/div/c-dtcvx_topic-home/c-dtcvx_topic/div/a[1]/div"))
