@@ -9,7 +9,7 @@ public class VideoPlayerTest {
     private final WebDriver driver = Main.getDriver();
     private final WebDriverWait wait = Main.getWait();
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "videoPlayer")
     void playPauseVideo() throws InterruptedException{
         Thread.sleep(1000);
 
@@ -28,14 +28,14 @@ public class VideoPlayerTest {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = "videoPlayer")
     void volumeSlider() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div[1]"))
                 .click();
         Thread.sleep(2000);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = "videoPlayer")
     void videoSettings() throws InterruptedException{
         // Click on the settings icon
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[3]/div/div[1]/div[3]/div[2]/div[3]"))
@@ -83,7 +83,7 @@ public class VideoPlayerTest {
         Thread.sleep(2000);
     }
 
-    @Test
+    @Test(priority = 4, groups = "videoPlayer")
     void screenSizeOptions() throws InterruptedException{
         // Click on the fullscreen button
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[5]/div[7]/div/div[1]"))
