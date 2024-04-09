@@ -4,24 +4,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ContinueWatchingTest {
-	private final WebDriver driver = Main.getDriver();
-	private final WebDriverWait wait = Main.getWait();
-	private final Dotenv dotenv = Main.getDotenv();
+public class ContinueWatchingTest extends BaseTest {
 	private final int expected = Integer.parseInt(dotenv.get("HULU_CONTINUE_WATCHING"));
 
-	@BeforeTest
+	@BeforeMethod
 	void setup() {
-		if (!Main.isOnMainPage()) {
-			Main.goToMainPage();
+		System.out.println("ContinueWatchingTest setup...");
+		if (isNotOnMainPage()) {
+			goToMainPage();
 		}
 	}
 
-	@Test(priority = 1)
-	public void continueWatching() {
+	@Test(dependsOnGroups = {"signIn"}, priority = 8, groups = "continueWatching")
+	public void continueWatching() throws InterruptedException {
+		System.out.println("ContinueWatchingTest case...");
+		Thread.sleep(SHORT_SLEEP_TIME);
+		js.executeScript("window.scrollTo(0, 1500)");
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Continue Watching']")));
 
 		By viewAll = By.xpath("//a[@href='/hub/home/collection/282']");
