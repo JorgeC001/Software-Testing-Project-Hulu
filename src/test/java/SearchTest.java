@@ -11,7 +11,7 @@ public class SearchTest {
     private final WebDriver driver = Main.getDriver();
     private final WebDriverWait wait = Main.getWait();
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "search")
     void searchByTitle() throws InterruptedException{
         driver.get("https://www.hulu.com/welcome");
         driver.manage().window().maximize();
@@ -55,7 +55,7 @@ public class SearchTest {
         Thread.sleep(1500);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = "search")
     void searchByBrowseLink() throws InterruptedException{
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -84,7 +84,7 @@ public class SearchTest {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = "search")
     void searchByGenre() throws InterruptedException{
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

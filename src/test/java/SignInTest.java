@@ -15,7 +15,7 @@ public class SignInTest {
     private final WebDriver driver = Main.getDriver();
     private final WebDriverWait wait = Main.getWait();
     
-    @Test(priority = -1)
+    @Test(priority = -2, groups = "signIn")
     void huluWelcomePage() throws InterruptedException {
         driver.get("https://www.hulu.com/welcome");
         driver.manage().window().maximize();
@@ -43,5 +43,10 @@ public class SignInTest {
         
         Actions actions = new Actions(driver);
         actions.moveToElement(profileElement).click().perform();
+    }
+
+    @Test(priority = -1, groups = "signIn")
+    void huluProfilePage() {
+
     }
 }
