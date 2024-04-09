@@ -1,21 +1,17 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class SignInTest {
     private final Login login = Main.getLogin();
     private final WebDriver driver = Main.getDriver();
     private final WebDriverWait wait = Main.getWait();
-    
-    @Test(priority = -2, groups = "signIn")
+
+    @Test(priority = -1)
     void huluWelcomePage() throws InterruptedException {
         driver.get("https://www.hulu.com/welcome");
         driver.manage().window().maximize();
@@ -43,10 +39,5 @@ public class SignInTest {
         
         Actions actions = new Actions(driver);
         actions.moveToElement(profileElement).click().perform();
-    }
-
-    @Test(priority = -1, groups = "signIn")
-    void huluProfilePage() {
-
     }
 }
