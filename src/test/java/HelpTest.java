@@ -1,16 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import javax.swing.plaf.TableHeaderUI;
 
 public class HelpTest extends BaseTest {
 
     @BeforeMethod
     void setUp() {
+        System.out.println("Setup help test");
         driver.get("https://help.hulu.com/");
         driver.manage().window().maximize();
     }
@@ -30,7 +27,7 @@ public class HelpTest extends BaseTest {
     }
 
     @Test(priority = 2, groups = "help")
-    void helpPopularArticles() throws InterruptedException{
+    void helpPopularArticles() {
         clickThenSleep(By.linkText("Plans and pricing"));
 
         clickThenSleep(By.linkText("Help Center"), SHORT_SLEEP_TIME);
@@ -57,7 +54,7 @@ public class HelpTest extends BaseTest {
     }
 
     @Test(priority = 3, groups = "help")
-    void helpTopics() throws InterruptedException{
+    void helpTopics() {
         // Click on the Getting Started topic
         clickThenSleep(By.xpath("/html/body/webruntime-app/lwr-router-container/webruntime-inner-app/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/c-dtcvx_support-theme/div/section/slot/webruntime-router-container/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/community_layout-slds-flexible-layout/div/webruntime-component-container/community_layout-section/div[3]/community_layout-column/div/c-dtcvx_topic-home/c-dtcvx_topic/div/a[1]/div"));
 
