@@ -12,6 +12,7 @@ public class SignInTest extends BaseTest {
 
     @Test(groups = "signIn")
     void huluWelcomePage() throws InterruptedException {
+        System.out.println("SigningIn");
         driver.get("https://www.hulu.com/welcome");
         driver.manage().window().maximize();
 
@@ -32,19 +33,27 @@ public class SignInTest extends BaseTest {
         clickThenSleep(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[2]/div[2]/div/div/button"));
 
         if (login.profileNumber() == null) {
-            longWait.until(ExpectedConditions.urlToBe(HUB_URL));
+            System.out.println("Waiting for main page...");
+            System.out.println(driver.getCurrentUrl());
+            longWait.until(ExpectedConditions.urlContains(HUB_URL));
             Assert.assertTrue(isOnMainPage());
         } else {
             Assert.assertTrue(isNotOnMainPage());
         }
+        System.out.println("Done Signing in");
     }
 
     @Test(priority = 1, groups = "signIn")
     void selectProfile() throws InterruptedException {
+        System.out.println("selectProfile");
         // not everyone has a profile
-        if (login.profileNumber() == null) return;
+        if (login.profileNumber() == null) {
+            System.out.println("Skipping...");
+            return;
+        }
+        System.out.println("Selecting profile");
 
-        Thread.sleep(2500);
+        Thread.sleep(SLEEP_TIME);
         // Select profile (when visible)
         By profile = By.xpath("/html/body/div[2]/div[1]/div/div[2]/div/div[2]/div/div/div[" + login.profileNumber() + "]/a/span");
         wait.until(ExpectedConditions.visibilityOfElementLocated(profile));
@@ -52,5 +61,6 @@ public class SignInTest extends BaseTest {
 
         Actions actions = new Actions(driver);
         actions.moveToElement(profileElement).click().perform();
+        System.out.println("Selected profile");
     }
 }
