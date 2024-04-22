@@ -14,6 +14,7 @@ public class MyStuffTest extends BaseTest {
 	private final Dotenv dotenv = Main.getDotenv();
 	private final int expected = Integer.parseInt(dotenv.get("HULU_MY_STUFF"));
 
+	// Make sure we're on the home page
 	@BeforeMethod
 	void setup() {
 		System.out.println("MyStuffTest setup...");
@@ -23,9 +24,11 @@ public class MyStuffTest extends BaseTest {
 	@Test(dependsOnGroups = {"signIn"}, priority = 9, groups = "myStuff")
 	public void myStuffTest() throws InterruptedException {
 		Thread.sleep(SLEEP_TIME);
+		// Look for the My Stuff link in the header
 		driver.findElement(By.linkText("My Stuff")).click();
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("#__next > div.LevelOne.cu-levelone > div.MyStuff > div.MyStuffBanner > div.MyStuffBanner__container.Container > div > div > h1"))));
 
+		// check to make sure we have the expected amount of shows
 		var test = driver.findElements(By.cssSelector("div.Tile__rollover"));
 
 		Assert.assertEquals(test.size(), expected);
